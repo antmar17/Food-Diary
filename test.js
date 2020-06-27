@@ -1,4 +1,8 @@
+
+
+//returns list of all foods by search
 function makeRequest(foodName){
+var filteredName=foodName.replace(" ","%20")
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var key="hiEZZJhDvog7Xx5ImwbM93H1AGSth0ApZXcGQJTY"
 var xhttp =  new XMLHttpRequest();
@@ -13,7 +17,7 @@ xhttp.onreadystatechange = function() {
 
     }
   };
-var url="https://api.nal.usda.gov/fdc/v1/foods/search?api_key="+key+"&query="+foodName
+var url="https://api.nal.usda.gov/fdc/v1/foods/search?api_key="+key+"&query="+foodName+"dataType= Foundation Foods"
 xhttp.open("GET",url , false);
 xhttp.send(null);
 
@@ -21,8 +25,8 @@ return JSON.parse(data)
 }
 
 
-var foodList=makeRequest("chicken")["foods"]
-console.log(foodList[0]["foodNutrients"])
+var foodList=makeRequest("chicken")
+console.log(foodList["foods"])
 
 
 
