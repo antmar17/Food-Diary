@@ -30,6 +30,7 @@ function getCalories(foodName,grams){
             return (nutrient["value"]/100)*grams
         }
     }
+    return 0;
 }
 console.log(getCalories("ground beef",100))
 
