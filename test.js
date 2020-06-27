@@ -33,7 +33,7 @@ function getCalories(foodName,grams){
         }
     }
 }
-console.log(getCalories("chicken",100))
+console.log(getCalories("ground beef",100))
 
 //calculate Basil Metabolic rate of man or woman (man parameter is a boolean)
 
