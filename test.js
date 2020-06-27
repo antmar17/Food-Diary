@@ -24,11 +24,16 @@ xhttp.send(null);
 return JSON.parse(data)
 }
 
-
-var foodList=makeRequest("chicken")
-console.log(foodList["foods"])
-
-
+function getCalories(foodName,grams){
+    var foodList=makeRequest(foodName)
+    var nutirentList=foodList["foods"][0]["foodNutrients"];
+    for( nutrient of nutirentList){
+        if( nutrient["nutrientId"]==1008){
+            return (nutrient["value"]/100)*grams
+        }
+    }
+}
+console.log(getCalories("chicken",100))
 
 //calculate Basil Metabolic rate of man or woman (man parameter is a boolean)
 
