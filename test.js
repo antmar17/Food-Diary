@@ -10,8 +10,6 @@ var data="NOPE"
 
 
 xhttp.onreadystatechange = function() {
-    console.log(this.readyState)
-    console.log(this.status)
     if (this.readyState == 4 && this.status == 200) {
         data=(this.responseText)
 
